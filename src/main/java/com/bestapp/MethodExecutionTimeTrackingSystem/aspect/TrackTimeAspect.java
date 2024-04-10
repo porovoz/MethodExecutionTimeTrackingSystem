@@ -3,7 +3,6 @@ package com.bestapp.MethodExecutionTimeTrackingSystem.aspect;
 import com.bestapp.MethodExecutionTimeTrackingSystem.exception.MethodExecutionTimeTrackingException;
 import com.bestapp.MethodExecutionTimeTrackingSystem.model.MethodExecutionTimeTracking;
 import com.bestapp.MethodExecutionTimeTrackingSystem.service.MethodExecutionTimeTrackingService;
-import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
