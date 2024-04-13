@@ -281,7 +281,7 @@ public class FacultyController {
 
     /**
      * Deleting faculty by id.
-     * @param id student identification number.
+     * @param id faculty identification number.
      */
     @Operation(
             summary = "Delete faculty by faculty id",
