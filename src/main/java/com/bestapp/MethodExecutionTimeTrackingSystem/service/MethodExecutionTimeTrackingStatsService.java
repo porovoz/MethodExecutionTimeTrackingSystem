@@ -9,6 +9,8 @@ public interface MethodExecutionTimeTrackingStatsService {
 
     /**
      * Getting all method execution time tracking pageable
+     * @param pageNumber page number
+     * @param pageSize page size number
      */
     List<MethodExecutionTimeTrackingDTO> findAllMethodExecutionTimeTrackingPageable(Integer pageNumber, Integer pageSize);
 
