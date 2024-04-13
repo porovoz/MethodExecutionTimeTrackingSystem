@@ -60,7 +60,7 @@ public class StudentController {
 
     /**
      * Getting student by id.
-     * @param studentId student identification number.
+     * @param id student identification number.
      * @return the response with the found student in JSON format and the HTTP 200 status code (Ok).<br>
      * If the student not found the HTTP status code 404 (Not found).
      */
@@ -69,7 +69,7 @@ public class StudentController {
             description = "Search by student id"
     )
     @Parameters(value = {
-            @Parameter(name = "studentId", example = "1")
+            @Parameter(name = "id", example = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(
@@ -95,9 +95,9 @@ public class StudentController {
                     }
             )
     })
-    @GetMapping("/{studentId}")
-    public ResponseEntity<StudentDTO> getStudentById(@PathVariable("studentId") Long studentId) {
-        StudentDTO foundStudentDTO = studentService.findStudentById(studentId);
+    @GetMapping("/{id}")
+    public ResponseEntity<StudentDTO> getStudentById(@PathVariable("id") Long id) {
+        StudentDTO foundStudentDTO = studentService.findStudentById(id);
         if (foundStudentDTO == null) {
             return ResponseEntity.notFound().build();
         }
@@ -322,14 +322,14 @@ public class StudentController {
 
     /**
      * Deleting student by id.
-     * @param studentId student identification number.
+     * @param id student identification number.
      */
     @Operation(
             summary = "Delete student by student id",
             description = "Search student by student id to delete"
     )
     @Parameters(value = {
-            @Parameter(name = "studentId", example = "1")
+            @Parameter(name = "id", example = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(
@@ -341,9 +341,9 @@ public class StudentController {
                     description = "Student not found"
             )
     })
-    @DeleteMapping("/{studentId}")
-    public ResponseEntity<Void> deleteStudentById(@PathVariable("studentId") Long studentId) {
-        studentService.deleteStudentById(studentId);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteStudentById(@PathVariable("id") Long id) {
+        studentService.deleteStudentById(id);
         return ResponseEntity.ok().build();
     }
 }

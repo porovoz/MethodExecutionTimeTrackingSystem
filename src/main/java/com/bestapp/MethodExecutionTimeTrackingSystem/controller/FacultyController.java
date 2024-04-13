@@ -60,7 +60,7 @@ public class FacultyController {
 
     /**
      * Getting faculty by id.
-     * @param facultyId faculty identification number.
+     * @param id faculty identification number.
      * @return the response with the found faculty in JSON format and the HTTP 200 status code (Ok).<br>
      * If the faculty not found the HTTP status code 404 (Not found).
      */
@@ -69,7 +69,7 @@ public class FacultyController {
             description = "Search faculty by faculty id"
     )
     @Parameters(value = {
-            @Parameter(name = "facultyId", example = "1")
+            @Parameter(name = "id", example = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(
@@ -95,9 +95,9 @@ public class FacultyController {
                     }
             )
     })
-    @GetMapping("/{facultyId}")
-    public ResponseEntity<FacultyDTO> getFacultyById(@PathVariable("facultyId") Long facultyId) {
-        FacultyDTO foundFacultyDTO = facultyService.findFacultyById(facultyId);
+    @GetMapping("/{id}")
+    public ResponseEntity<FacultyDTO> getFacultyById(@PathVariable("id") Long id) {
+        FacultyDTO foundFacultyDTO = facultyService.findFacultyById(id);
         if (foundFacultyDTO == null) {
             return ResponseEntity.notFound().build();
         }
@@ -281,14 +281,14 @@ public class FacultyController {
 
     /**
      * Deleting faculty by id.
-     * @param facultyId student identification number.
+     * @param id student identification number.
      */
     @Operation(
             summary = "Delete faculty by faculty id",
             description = "Search faculty by faculty id to delete"
     )
     @Parameters(value = {
-            @Parameter(name = "facultyId", example = "1")
+            @Parameter(name = "id", example = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(
@@ -300,9 +300,9 @@ public class FacultyController {
                     description = "Faculty not found"
             )
     })
-    @DeleteMapping("/{facultyId}")
-    public ResponseEntity<Void> deleteFacultyById(@PathVariable("facultyId") Long facultyId) {
-        facultyService.deleteFacultyById(facultyId);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteFacultyById(@PathVariable("id") Long id) {
+        facultyService.deleteFacultyById(id);
         return ResponseEntity.ok().build();
     }
 }
