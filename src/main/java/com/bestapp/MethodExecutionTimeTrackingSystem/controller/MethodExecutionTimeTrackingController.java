@@ -40,7 +40,7 @@ public class MethodExecutionTimeTrackingController {
     /**
      * Getting all method execution time tracking pageable.
      * @param pageNumber page number
-     * @param pageSize page size
+     * @param pageSize page size number
      * @return the response with the found method execution time tracking list in JSON format and the HTTP 200 status code (Ok).<br>
      * If the method execution time tracking list not found the HTTP status code 404 (Not found).
      */
