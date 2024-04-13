@@ -38,7 +38,7 @@ public class MethodExecutionTimeTrackingController {
     private final MethodExecutionTimeTrackingStatsService methodExecutionTimeTrackingStatsService;
 
     /**
-     * Getting all method execution time tracking.
+     * Getting all method execution time tracking pageable.
      * @param pageNumber page number
      * @param pageSize page size
      * @return the response with the found method execution time tracking list in JSON format and the HTTP 200 status code (Ok).<br>
